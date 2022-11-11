@@ -58,13 +58,24 @@ getInstruction(
 const steakOL = document.getElementById("steak");
 
 for (let i = 0; i < steak.length; i++) {
-  obtainInstruction("steak", i).then((i) => {
-    steakOL.innerHTML += `<li>${i}</li>`;
-  });
+  obtainInstruction("steak", i)
+    .then((i) => {
+      steakOL.innerHTML += `<li>${i}</li>`;
+    })
+    .catch((err) => console.log(err));
 }
 
-// ... Your code here
+// with forEach:
 
+// steak.forEach((step) =>
+//   obtainInstruction("steak", steak.indexOf(step))
+//     .then((step) => {
+//       steakOL.innerHTML += `<li>${step}</li>`;
+//     })
+//     .catch((err) => console.log(err))
+// );
+
+//
 // Iteration 3 using async/await
 // ...
 
