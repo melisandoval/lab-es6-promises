@@ -56,17 +56,19 @@ getInstruction(
 // ----------------------------------------------
 // Iteration 2 - using promises .then()
 
-const steakOL = document.getElementById("steak");
+const STEAK = "steak";
+const steakOL = document.getElementById(STEAK);
 
 for (let i = 0; i < steak.length; i++) {
-  obtainInstruction("steak", i)
-    .then((i) => {
-      steakOL.innerHTML += `<li>${i}</li>`;
+  obtainInstruction(STEAK, i)
+    .then((step) => {
+      steakOL.innerHTML += `<li>${step}</li>`;
     })
     .catch((err) => console.log(err));
 }
 
 // with forEach:
+
 // steak.forEach((step) =>
 //   obtainInstruction("steak", steak.indexOf(step))
 //     .then((step) => {
