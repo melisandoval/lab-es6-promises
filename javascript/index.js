@@ -116,7 +116,25 @@ async function makeBroccoli() {
 makeBroccoli();
 
 // ----------------------------------------------
-// Bonus 1
 
-// Bonus 2 - Promise all
-// ...
+// Bonus 2 - Promise all - Brussels Sprouts
+
+const BRUSSELS = "brusselsSprouts";
+const arrOfSteps = brusselsSprouts;
+let arrOfPromises = [];
+const brusselsSproutsOL = document.getElementById(BRUSSELS);
+const brussImg = document.getElementById("brusselsSproutsImg");
+
+for (let i = 0; i < arrOfSteps.length; i++) {
+  arrOfPromises.push(obtainInstruction(BRUSSELS, i));
+}
+
+Promise.all(arrOfPromises)
+  .then((steps) =>
+    steps.forEach((step) => (brusselsSproutsOL.innerHTML += `<li>${step}</li>`))
+  )
+  .then(
+    () =>
+      (brusselsSproutsOL.innerHTML += `<li>Brussels sprouts are ready!</li>`)
+  )
+  .then(() => brussImg.removeAttribute("hidden"));
