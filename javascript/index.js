@@ -53,6 +53,7 @@ getInstruction(
 // Iteration 1 - using callbacks
 // ...
 
+// ----------------------------------------------
 // Iteration 2 - using promises .then()
 
 const steakOL = document.getElementById("steak");
@@ -66,7 +67,6 @@ for (let i = 0; i < steak.length; i++) {
 }
 
 // with forEach:
-
 // steak.forEach((step) =>
 //   obtainInstruction("steak", steak.indexOf(step))
 //     .then((step) => {
@@ -75,9 +75,24 @@ for (let i = 0; i < steak.length; i++) {
 //     .catch((err) => console.log(err))
 // );
 
-//
+// ----------------------------------------------
 // Iteration 3 using async/await
-// ...
+
+const BROC = "broccoli";
+const broccoliOL = document.getElementById(BROC);
+
+async function makeBroccoli() {
+  for (let i = 0; i < broccoli.length; i++) {
+    try {
+      broccoliOL.innerHTML += `<li>${await obtainInstruction(BROC, i)}</li>`;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  broccoliOL.innerHTML += `<li>Broccoli is ready!</li>`;
+}
+
+makeBroccoli();
 
 // Bonus 2 - Promise all
 // ...
