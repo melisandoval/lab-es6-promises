@@ -57,25 +57,42 @@ getInstruction(
 // Iteration 2 - using promises .then()
 
 const STEAK = "steak";
+const steakArr = steak;
 const steakOL = document.getElementById(STEAK);
+const steakImg = document.getElementById("steakImg");
 
-for (let i = 0; i < steak.length; i++) {
-  obtainInstruction(STEAK, i)
-    .then((step) => {
-      steakOL.innerHTML += `<li>${step}</li>`;
-    })
-    .catch((err) => console.log(err));
-}
+obtainInstruction(STEAK, 0)
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 1))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 2))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 3))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 4))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 5))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 6))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => obtainInstruction(STEAK, 7))
+  .then((step) => (steakOL.innerHTML += `<li>${step}</li>`))
+  .then(() => steakImg.removeAttribute("hidden"))
+  .catch((err) => console.log(err));
 
-// with forEach:
+// refactored above code with async await:
 
-// steak.forEach((step) =>
-//   obtainInstruction("steak", steak.indexOf(step))
-//     .then((step) => {
-//       steakOL.innerHTML += `<li>${step}</li>`;
-//     })
-//     .catch((err) => console.log(err))
-// );
+// async function printSteakRecipe() {
+//   for (el of steakArr) {
+//     const step = await obtainInstruction(STEAK, steakArr.indexOf(el));
+//     steakOL.innerHTML += `<li>${step}</li>`;
+//     if (steakArr.indexOf(el) === steakArr.length - 1) {
+//       steakImg.removeAttribute("hidden");
+//     }
+//   }
+// }
+
+// printSteakRecipe();
 
 // ----------------------------------------------
 // Iteration 3 using async/await
@@ -97,6 +114,7 @@ async function makeBroccoli() {
 makeBroccoli();
 
 // ----------------------------------------------
+// Bonus 1
 
 // Bonus 2 - Promise all
 // ...
