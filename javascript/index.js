@@ -99,6 +99,7 @@ obtainInstruction(STEAK, 0)
 
 const BROC = "broccoli";
 const broccoliOL = document.getElementById(BROC);
+const brocImg = document.getElementById("broccoliImg");
 
 async function makeBroccoli() {
   for (let i = 0; i < broccoli.length; i++) {
@@ -109,6 +110,7 @@ async function makeBroccoli() {
     }
   }
   broccoliOL.innerHTML += `<li>Broccoli is ready!</li>`;
+  brocImg.removeAttribute("hidden");
 }
 
 makeBroccoli();
