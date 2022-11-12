@@ -65,7 +65,7 @@ mashedPotatoes.forEach(
 // Iteration 2 - using promises .then()
 
 const STEAK = "steak";
-const steakArr = steak;
+// const steakArr = steak;
 const steakOL = document.getElementById(STEAK);
 const steakImg = document.getElementById("steakImg");
 
@@ -112,7 +112,8 @@ const brocImg = document.getElementById("broccoliImg");
 async function makeBroccoli() {
   for (let i = 0; i < broccoli.length; i++) {
     try {
-      broccoliOL.innerHTML += `<li>${await obtainInstruction(BROC, i)}</li>`;
+      const step = await obtainInstruction(BROC, i);
+      broccoliOL.innerHTML += `<li>${step}</li>`;
     } catch (error) {
       console.log(error);
     }
