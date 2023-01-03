@@ -1,35 +1,5 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+# Bootcamp LAB | Practice with JavaScript promises 
 
-# LAB | #Promise me a dinner
-
-## Introduction
-
-Due to the asynchronous nature of JavaScript, promises and callbacks are very important. Both allow us to control the flow of the operations and execute tasks in sequence.
-
-<p align="center">
-
-<img src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/labs/lab-promise-me-dinner-cover.png" alt="Lab Promise me dinner - final result" width="500" />
-
-</p>
-
-## Requirements
-
-- Fork this repo
-- Clone this repo
-
-## Submission
-
-Upon completion, run the following commands:
-
-```shell
-$ git add .
-$ git commit -m "done"
-$ git push origin master
-```
-
-Create Pull Request so your TAs can check up your work.
-
-## Instructions
 
 ### Iteration 0 | The starter code
 
@@ -197,5 +167,3 @@ After the last step, you should display an additional `<li>` with the text: `Bru
 ![Bonus Iteration 2 expected result](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/labs/lab-promise-me-dinner-bonus-2-result.gif)
 
 <br>
-
-**Happy coding!** :blue_heart:
